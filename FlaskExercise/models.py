@@ -32,7 +32,7 @@ class Animal(db.Model):
                 pass
                 if self.image_path:
                     # TODO: Get a blob client and delete the previous blob
-                    blob_client = blob_service.get_blob_client(container=blob_container, blob=filename)
+                    blob_client = blob_service.get_blob_client(container=blob_container, blob=self.image_path)
                     blob_client.delete_blob()
                     pass
             except Exception as err:
